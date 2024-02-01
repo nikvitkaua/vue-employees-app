@@ -1,0 +1,24 @@
+{
+  "employees": [
+    {
+      "name": "John M.", 
+      "salary": 800, 
+      "increase": true,
+      "rise": true
+    },
+    
+    {
+      "name": "Susen H.", 
+      "salary": 1800, 
+      "increase": true,
+      "rise": false
+    },
+    
+    {
+      "name": "Carl A.", 
+      "salary": 1200, 
+      "increase": true,
+      "rise": false
+    }
+  ]
+}

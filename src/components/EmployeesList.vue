@@ -1,0 +1,19 @@
+<script setup>
+  import EmployeesItem from './EmployeesItem.vue';
+</script>
+
+<template>
+  <ul className="app-list list-group">
+    <EmployeesItem />
+  </ul>
+</template>
+
+<style scoped>
+.app-list {
+  margin-top: 30px;
+  background-color: #3d5a80;
+  border-radius: 4px;
+  box-shadow: 15px 15px 30px rgba(0,0,0, .15);
+  color: #fff;
+}
+</style>
