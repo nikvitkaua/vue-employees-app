@@ -1,10 +1,18 @@
 <script setup>
   import EmployeesItem from './EmployeesItem.vue';
+
+  const props = defineProps({
+    data: {
+      type: Object,
+      required: true
+    }
+  });
+
 </script>
 
 <template>
   <ul className="app-list list-group">
-    <EmployeesItem />
+    <EmployeesItem v-for="(employee, key) in props.data?.employees" :key="key" :name="employee.name" :salary="employee.salary" :isIncrease="employee.increase" :isRise="employee.rise" />
   </ul>
 </template>
 

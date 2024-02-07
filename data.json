@@ -3,7 +3,7 @@
     {
       "name": "John M.", 
       "salary": 800, 
-      "increase": true,
+      "increase": false,
       "rise": true
     },
     
@@ -17,7 +17,7 @@
     {
       "name": "Carl A.", 
       "salary": 1200, 
-      "increase": true,
+      "increase": false,
       "rise": false
     }
   ]

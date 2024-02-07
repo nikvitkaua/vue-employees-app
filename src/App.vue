@@ -1,21 +1,36 @@
 <script setup>
+  import axios from 'axios'
+  import { ref, onMounted } from 'vue'
+
   import AppInfo from './components/AppInfo.vue';
   import SearchPanel from './components/SearchPanel.vue';
   import EmployeesFilter from './components/EmployeesFilter.vue';
   import EmployeesList from './components/EmployeesList.vue';
   import EmployeesAddForm from './components/EmployeesAddForm.vue';
+
+  const data = ref(null);
+
+  onMounted(async () => {
+    try {
+      const response = await axios.get('data.json');
+      data.value = response.data;
+    } catch {
+      console.log('Не удалось получить данные с сервера');
+    }
+  });
+
 </script>
 
 <template>
   <div className="app">
-    <AppInfo :employeesInfo="employeesInfo" />
+    <AppInfo />
 
     <div className="search-panel">
         <SearchPanel />
         <EmployeesFilter />
     </div>
     
-    <EmployeesList />
+    <EmployeesList :data="data" />
     <EmployeesAddForm />
   </div>
 </template>

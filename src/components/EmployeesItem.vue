@@ -1,10 +1,41 @@
 <script setup>
+const props = defineProps({
+    name: {
+        type: String,
+        required: true
+    },
+    salary: {
+        type: Number,
+        required: true
+    },
+    isIncrease: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+    isRise: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+});
+
+const { name, salary, isIncrease, isRise } = props;
+
+// Element class
+let elementClass = "list-group-item d-flex justify-content-between";
+
+if (isIncrease) {
+    elementClass += " increase";
+} else {
+    elementClass;
+}
 </script>
 
 <template>
-  <li className="list-group-item d-flex justify-content-between">
-    <span className="list-group-item-label">John M.</span>
-    <input type="text" className="list-group-item-input" defaultValue="800" />
+  <li :className="elementClass">
+    <span className="list-group-item-label">{{ name }}</span>
+    <input type="text" className="list-group-item-input" :defaultValue="salary" />
     <div className='d-flex justify-content-center align-items-center'>
         <button type="button"
             className="btn-cookie btn-sm ">
